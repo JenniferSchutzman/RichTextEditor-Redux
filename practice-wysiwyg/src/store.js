@@ -1,12 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
-import { richTextEditorReducer } from "./reducers/customization/richTextEditor.js";
+import { emailFormEntryReducer } from "./reducers/customization/emailFormEntry.js";
 
 
 const store = createStore(
 	combineReducers({
-	richTextEditorReducer
+	emailFormEntryReducer
 	}),
 	applyMiddleware(thunk)
 );

@@ -24,8 +24,45 @@ import InputLabel from "@material-ui/core/InputLabel";
 
 import PopupRichEditor from "./PopupRichEditor.js"
 
+
+const styles = theme => ({
+	// container: {
+	// 	display: "flex",
+	// 	flexWrap: "wrap"
+	// },
+	root: {
+		display: "50%",
+		width: "50%",
+
+		marginLeft: theme.spacing.unit * 3,
+		marginRight: theme.spacing.unit * 3
+		//	marginBottom: theme.spacing.unit * 50
+	},
+	textField: {
+		marginLeft: theme.spacing.unit,
+		marginRight: theme.spacing.unit,
+		width: "50%"
+	},
+
+	heading: {
+		fontSize: theme.typography.pxToRem(15),
+		fontWeight: theme.typography.fontWeightRegular
+	},
+	formControl: {
+		margin: theme.spacing.unit
+	}
+	// menu: {
+	// 	width: 200
+	// },
+	// formControl: {
+	// 	margin: theme.spacing.unit
+	// }
+});
+
 const EmailLayout = props => {
-  const {classes, history, onChange, handleChange} = props
+  const {classes, history, onChange, handleChange, richEditor, emailFormData} = props
+	console.log("emailFormData in mapStateToProps in EmailLayoutLC", emailFormData)
+	console.log("richEditor state in EmailLayoutLC", richEditor);
   return (
 
     <div className={classes.root}>
@@ -38,13 +75,13 @@ const EmailLayout = props => {
 							<FormControl className={classes.formControl}>
 								<PopupRichEditor
 									id="rich-editor"
-									value={props.richEditor}
-									onChange={props.handleChange}
+									value={richEditor}
+									onChange={handleChange}
 								>
 									<Input
 										id="rich-editor"
-										value={props.richEditor}
-										onChange={props.handleChange}
+										value={richEditor}
+										onChange={handleChange}
 									/>
 								</PopupRichEditor>
 							</FormControl>
@@ -57,7 +94,7 @@ const EmailLayout = props => {
 }
 
 const mapStateToProps = state => {
-	console.log("state in mapStateToProps of EMAILFORMENTRY", state);
+
 	return {
 		emailFormData: state.emailFormEntryReducer.emailInfo,
 		richEditor: state.emailFormEntryReducer.richEditor

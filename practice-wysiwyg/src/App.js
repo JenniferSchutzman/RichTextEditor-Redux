@@ -12,7 +12,7 @@ import Customization from "./pages/customization";
 // LIBRARY
 import { not } from "ramda";
 
-const auth = new Auth();
+
 // <Route exact path="/profile" component={Secure(Account)} />
 class App extends Component {
 	render() {
