@@ -1,21 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+//  REACT SETUP
+import React, { Component } from "react";
+import { Route, Switch, Router, Redirect } from "react-router-dom";
+import history from "./history";
+import "./App.css";
+// SECURITY
 
+// ORGANIZED COMPONENTS FROM INDEX PAGES
+import Customization from "./pages/customization";
+
+
+// LIBRARY
+import { not } from "ramda";
+
+const auth = new Auth();
+// <Route exact path="/profile" component={Secure(Account)} />
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<Router history={history}>
+				<div>
+					<Switch>
+
+						<Route
+							exact
+							path="/customization"
+							component={Customization}
+						/>
+					</Switch>
+				</div>
+			</Router>
+		);
+	}
 }
 
 export default App;
