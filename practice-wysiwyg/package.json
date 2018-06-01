@@ -1,0 +1,30 @@
+{
+  "name": "practice-wysiwyg",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^1.1.0",
+    "classnames": "^2.2.5",
+    "draft-js": "^0.10.5",
+    "draftjs-utils": "^0.9.4",
+    "html-to-draftjs": "^1.4.0",
+    "immutable": "^3.8.2",
+    "linkify-it": "^2.0.3",
+    "material-ui": "^0.20.1",
+    "prop-types": "^15.6.1",
+    "ramda": "^0.25.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-draft-wysiwyg": "^1.12.13",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "thunk": "^0.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
