@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
 import { emailFormEntryReducer } from "./reducers/customization/emailFormEntry.js";
@@ -8,7 +8,10 @@ const store = createStore(
 	combineReducers({
 	emailFormEntryReducer
 	}),
-	applyMiddleware(thunk)
-);
+compose(
+	applyMiddleware(thunk),
+	window.devToolsExtension ? window.devToolsExtension() : f => f
+	)
+ );
 
-export default store;
+ export default store;

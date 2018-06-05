@@ -103,7 +103,7 @@ const mapStateToProps = state => {
 
 const mapActionsToProps = dispatch => {
 	return {
-		handleChange: name => event => {
+		handleChange: event => value => {
 			dispatch({
 				type: ENTERED_RICH_EDITOR_TEXT,
 				payload: event.target.value
